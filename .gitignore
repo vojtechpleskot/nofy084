@@ -1,0 +1,13 @@
+# Ignore all latex-generated files in all subdirectories
+**/*.aux
+**/*.log
+**/*.out
+**/*.toc
+**/*.nav
+**/*.snm
+**/*.vrb
+**/*.bbl
+**/*.blg
+**/*.bcf
+# Other files to ignore
+02_quiz/data.txt

@@ -1,0 +1,461 @@
+\documentclass[9pt]{beamer}
+%\usepackage[utf8]{inputenc}
+%\usepackage[czech]{babel}
+%\usepackage{slashed}
+%\usepackage{axodraw}
+%\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{unicode=true, colorlinks=true}
+\usepackage{graphicx}
+\usepackage{xspace}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\usetheme{Warsaw}
+\usepackage{variables}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    columns=flexible,         % Improves character spacing
+    showspaces=false,          % Removes the u-shaped space symbols
+    showstringspaces=false,    % Removes symbols inside 'strings'
+    showtabs=false,            % Removes symbols for tabs
+    breaklines=true,           % Wraps long lines
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange}
+}
+
+\newenvironment{narrow}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]
+}{\end{list}}
+
+\title[]{Quiz}
+\author[Vojtech Pleskot]{Vojtech Pleskot\inst{1}} %use \and to separate two authors
+\institute[]{CU Prague\inst{1}}
+\date{}
+
+%\setbeamertemplate{headline}
+%{
+%  \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,leftskip=.3cm,rightskip=.3cm]{section in head/foot}
+%    \vskip2pt\insertsection \hskip20pt \insertsubsection\vskip2pt
+%  \end{beamercolorbox}
+%}
+
+\setbeamertemplate{footline}
+{
+%  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}
+%    \usebeamerfont{author in head/foot}\insertauthor
+%  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.0ex,dp=3.0ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}
+    \usebeamerfont{title in head/foot} \hfill \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}%}
+  \vskip0pt
+}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% This is a simple quiz with one question per frame. The correct answer is revealed on the next frame.
+% For each question, there are four to six possible answers.
+% The questions are numbered from A to F.
+% There might be several correct answers to each question, but at least one of the answers is correct.
+% The test checks the university students' knowledge of the Python programming language and its libraries, as well as their ability to use it for data analysis and visualization.
+% In particular, work with strings, lists, dictionaries, sets, tuples, functions, classes, modules, packages, and libraries such as NumPy, Matplotlib, SciPy, and uncertainties is tested.
+
+
+% Function definition question
+\begin{frame}[fragile]
+  What is the value of the variable \texttt{a} after executing the following code?
+\begin{lstlisting}
+def func(x):
+    return x * 2
+a = func(3)
+\end{lstlisting}
+\begin{itemize}
+\item A) 5
+\item B) 6
+\item C) 9
+\item D) 1.5
+\end{itemize}
+\end{frame}
+
+% List indexing question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+my_list = [1, 2, 3]
+print(my_list[2])
+\end{lstlisting}
+\begin{itemize}
+\item A) [3]
+\item B) [1, 2]
+\item C) 3
+\item D) IndexError: list index out of range
+\end{itemize}
+\end{frame}
+
+% String formatting question
+\begin{frame}[fragile]
+  Let's have a variable \texttt{x} whose value is 10. Which string is equal to "The value of x is 10"?
+\begin{itemize}
+\item A) "The value of x is " + str(x)
+\item B) "The value of x is 10"
+\item C) "The value of x is " + x
+\item D) f"The value of x is {x}"
+\item E) "The value of x is {}".format(x)
+\end{itemize}
+\end{frame}
+
+% Dictionary question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+print(my_dict['b'])
+\end{lstlisting}
+\begin{itemize}
+\item A) 'b'
+\item B) 2
+\item C) {'b': 2}
+\item D) KeyError: 'b'
+\end{itemize}
+\end{frame}
+
+% Variable scope question
+\begin{frame}[fragile]
+  What is the value of \texttt{x} after executing the following code?
+\begin{lstlisting}
+x = 10
+def func():
+    x = 5
+    return x
+a = func()
+\end{lstlisting}
+\begin{itemize}
+\item A) None
+\item B) 5
+\item C) nan
+\item D) 10
+\end{itemize}
+\end{frame}
+
+% Set operations question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+my_set = {1, 2, 3}
+my_set.add(3)
+print(my_set)
+\end{lstlisting}
+\begin{itemize}
+\item A) {1, 2, 3, 3}
+\item B) AttributeError: 'set' object has no attribute 'add'
+\item C) {1, 2, 3}
+\item D) 'Jak vám dupou králíci?'
+\end{itemize}
+\end{frame}
+
+% List slicing question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+my_list = [1, 2, 3, 4, 5]
+print(my_list[1:4])
+\end{lstlisting}
+\begin{itemize}
+\item A) [1, 2, 3]
+\item B) [2, 3, 4]
+\item C) [3, 4, 5]
+\item D) [1, 2, 3, 4]
+\item E) [2, 3, 4, 5]
+\end{itemize}
+\end{frame}
+
+% Dictionary comprehension question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}my_dict = {x: x**2 for x in range(5)}
+print(my_dict)
+\end{lstlisting}
+\begin{itemize}
+\item A) {1: 1, 2: 4, 3: 9, 4: 16}
+\item B) {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+\item C) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+\item D) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+\item E) {(0, 1, 2, 3, 4): (0, 1, 4, 9, 16)}
+\item F) {(1, 2, 3, 4, 5): (1, 4, 9, 16, 25)}
+\end{itemize}
+\end{frame}
+
+% Tuple unpacking question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+def func():
+    return 1, 2
+a, b = func()
+print(a, b)
+\end{lstlisting}
+\begin{itemize}
+\item A) (1, 2)
+\item B) 1 2
+\item C) 1, 2
+\item D) ValueError: too many values to unpack
+\end{itemize}
+\end{frame}
+
+% Text file reading question
+\begin{frame}[fragile]
+  How to get the content of the file 'file.txt' read to the variable \texttt{data}?
+\begin{itemize}
+\item A) Sezame, otevri se!
+\item B) data = open('file.txt', 'r')
+\item C) with open('file.txt', 'r') as f: data = f.read()
+\item D) f = 'file.txt'; data = f.read()
+\item E) f = 'file.txt'; for line in f: data += line
+\end{itemize}
+\end{frame}
+
+% Module import question
+\begin{frame}[fragile]
+  How to calculate \texttt{sin(1)} using the \texttt{math} module?
+\begin{itemize}
+\item A) import math; sin(1)
+\item B) from math import sin; sin(1)
+\item C) import math as m; math.sin(1)
+\item D) import math; math.sin(1)
+\item E) chodit do kurzu NOFY084, bedlivě poslouchat a udělat všechny úkoly
+\end{itemize}
+\end{frame}
+
+% NumPy array addition question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+import numpy as np
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+print(a + b)
+\end{lstlisting}
+\begin{itemize}
+  \item A) [1 2 3] + [4 5 6]
+  \item B) [1 2 3 4 5 6]
+  \item C) [4 5 6 1 2 3]
+  \item D) [5 7 9]
+\end{itemize}
+\end{frame}
+
+% NumPy array multiplication question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+  import numpy as np
+  a = np.array([1, 2, 3])
+  b = np.array([1, 2, 3])
+  print(a * b)
+\end{lstlisting}
+\begin{itemize}
+\item A)
+\begin{lstlisting}
+[[1 2 3]
+ [1 2 3]
+ [1 2 3]]
+\end{lstlisting}
+\item B) 14
+\item C) [1 4 9]
+\item D) [1 2 3] * [4 5 6]
+\end{itemize}
+\end{frame}
+
+% Broadcasting question
+\begin{frame}[fragile]
+  What is the output of the following code?
+\begin{lstlisting}
+import numpy as np
+a = np.array([[1, 2, 3], [4, 5, 6]])
+b = np.array([1, 2, 3])
+print(a + b)
+\end{lstlisting}
+\begin{itemize}
+  \item A)
+  \begin{lstlisting}
+    [[1 2 3]
+     [4 5 6]
+     [1 2 3]]
+  \end{lstlisting}
+  \item B)
+  \begin{lstlisting}
+    [[2 4 6]
+     [4 5 6]]
+  \end{lstlisting}
+  \item C)
+  \begin{lstlisting}
+  [[2 4 6]
+   [5 7 9]]
+  \end{lstlisting}
+\item D) Už nedokážu vymyslet další nesmyslné možnosti, ale správná odpověď je A
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%ukazky, jak se co dela
+%
+%fill all the frame width with three pictures:
+%  \begin{narrow}{-1.3cm}{-1.1cm}
+%    \begin{tabular}[h]{ccc}
+%      \includegraphics[width=4.5cm]{}&
+%      \hspace{-0.75cm}    \includegraphics[width=4.5cm]{}&
+%      \hspace{-0.75cm}    \includegraphics[width=4.5cm]{}\\
+%    \end{tabular}
+%  \end{narrow}
+%
+%two pictures side by side:
+%  \begin{figure}[h]
+%    \centering
+%    \includegraphics[width=5.5cm]{}
+%    \includegraphics[width=5.5cm]{}
+%    \caption{popisek obrazku}
+%  \end{figure}
+%
+%two pictures one under the other
+%  \begin{narrow}{-1.3cm}{-1.1cm}
+%    \begin{tabular}[h]{c}
+%      \includegraphics[width=9.5cm]{} \vspace{-0.15cm} \\
+%      \includegraphics[width=9.5cm]{}
+%    \end{tabular}
+%  \end{narrow}
+%
+%several pictures, each with its own caption
+%  \begin{figure}
+%    \centering
+%    \begin{subfigure}[b]{0.49\textwidth}
+%      \centering
+%      \caption{}
+%      \includegraphics[width=5.5cm]{}
+%    \end{subfigure}
+%    \begin{subfigure}[b]{0.49\textwidth}
+%      \centering
+%      \caption{}
+%      \includegraphics[width=5.5cm]{}
+%    \end{subfigure}
+%  \end{figure}
+%
+%tabulka:
+%    \begin{table}[h]
+%      \centering
+%      \begin{tabular}{|c|c|c||c|c|c|}
+%        \hline
+%        \multicolumn{3}{|c||}{leptony} &
+%        \multicolumn{3}{|c|}{kvarky} \\
+%        \hline
+%        e & $\mu$ & $\tau$ & u & c & t\\
+%        \hline
+%        $\bar{\nu}_e$ & $\bar{\nu}_\mu$ & $\bar{\nu}_\tau$ & d & s & b\\
+%        \hline
+%      \end{tabular}
+%    \end{table}
+%
+%tucny text:
+%\textbf{muj tucny text}
+%
+%rozdeleni framu na sloupce:
+%  \begin{columns}[t] % contents are top vertically aligned
+%    \column{0.5\textwidth}
+%    sem uz prijde, co chci
+%    \column{0.5\textwidth}
+%    sem taky prijde, co chci
+%  \end{columns}
+%
+%showing items one by one:
+%\begin{itemize}
+%\item neco
+%  \pause
+%\item druha polozka
+%  \pause
+%\item treti polozka
+%\end{itemize}
+%
+%hodne obrazku na jednom slidu:
+%  \begin{narrow}{-1.3cm}{-1.1cm}
+%  \begin{tabular}[h]{ccc}
+%    \includegraphics[width=4.1cm]{}&
+%\hspace{-0.3cm}    \includegraphics[width=4.1cm]{}&
+%\hspace{-0.3cm}    \includegraphics[width=4.1cm]{}\\
+%    \includegraphics[width=4.1cm]{}&
+%\hspace{-0.3cm}    \includegraphics[width=4.1cm]{}&
+%\hspace{-0.3cm}    \includegraphics[width=4.1cm]{}\\
+%  \end{tabular}
+%  \end{narrow}
+%
+%five pictures and place for the sixth replaced by itemize
+%
+%  \vspace{-0.4cm}
+%  \begin{narrow}{-1.3cm}{-1.1cm}
+%    \begin{tabular}[h]{p{4.2cm}p{4.2cm}p{4.2cm}}
+%      \includegraphics[width=4.5cm]{}&
+%      \hspace{-0.45cm}    \includegraphics[width=4.5cm]{}&
+%      \hspace{-0.75cm}    \includegraphics[width=4.5cm]{}\\
+%      \includegraphics[width=4.5cm]{}&
+%      \hspace{-0.45cm}    \includegraphics[width=4.5cm]{}&
+%      \vspace{-4.75cm}
+%      \begin{narrow}{-0.8cm}{0.6cm}
+%        \begin{itemize}
+%        \item 
+%        \end{itemize}
+%      \end{narrow}\\  
+%    \end{tabular}
+%  \end{narrow}  
+%
+%merge rows in tabular: multirow usage example
+%  \begin{table}[ph]
+%    \centering
+%    \begin{tabular}{|c|c|c|}
+%      \hline
+%      1.1&1.1&\multirow{3}{*}{merged}\\
+%      \cline{1-2}
+%      2.5 & 1 & \\
+%      \cline{1-2}
+%      2.5 & 1 & \\
+%      \cline{1-3}
+%      2.5 & 1 & 1\\
+%      \cline{1-3}
+%    \end{tabular}
+%    \caption{}
+%    \label{}
+%  \end{table}
+%
+%

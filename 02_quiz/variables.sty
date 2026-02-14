@@ -1,0 +1,627 @@
+\newcommand{\mjh}{\ensuremath{\mathrm{MJ\ hJVT}}\xspace}
+\newcommand{\mjl}{\ensuremath{\mathrm{MJ\ lJVT}}\xspace}
+\newcommand{\ff}{\ensuremath{\mathrm{FF}}\xspace}
+\newcommand{\ffs}{\ensuremath{\mathrm{FFs}}\xspace}
+\newcommand{\muz}{\ensuremath{\mu_{Z}}\xspace}
+\newcommand{\ffz}{\ensuremath{\ff_{Z}}\xspace}
+\newcommand{\mutt}{\ensuremath{\mu_{\ttbar}}\xspace}
+\newcommand{\fftt}{\ensuremath{\ff_{\ttbar}}\xspace}
+\newcommand{\mumjl}{\ensuremath{\mu_\mjl}\xspace}
+\newcommand{\ffmjl}{\ensuremath{\ff_\mjl}\xspace}
+\newcommand{\mumjh}{\ensuremath{\mu_\mjh}\xspace}
+\newcommand{\ffmjh}{\ensuremath{\ff_\mjh}\xspace}
+\newcommand{\ffcomb}{\ensuremath{\ff_\mathrm{comb}}\xspace}
+\newcommand{\muw}{\ensuremath{\mu_{W}}\xspace}
+\newcommand{\ffw}{\ensuremath{\ff_{W}}\xspace}
+\newcommand{\muqcd}{\ensuremath{\mu_\mathrm{QCD}}\xspace}
+\newcommand{\ffqcd}{\ensuremath{\ff_\mathrm{QCD}}\xspace}
+\newcommand{\jvt}{\ensuremath{\mathrm{JVT}}\xspace}
+
+\def\LQ{\ensuremath{LQ}}
+\def\LQbar{\ensuremath{\bar{LQ}}}
+\def\LQone{\ensuremath{\LQ}1}
+\def\LQtwo{\ensuremath{\LQ}2}
+\def\LQthree{\ensuremath{\LQ}3}
+\def\LQLQ{\LQ\,\overline{\LQ}}
+%
+\def\mll{\ensuremath{m_{\mathrm{\ell \ell}}}\xspace}
+\def\mt{\ensuremath{m_{\mathrm{T}}}\xspace}
+\newcommand{\mlqmin}{\ensuremath{m_{\mathrm{LQ}}^{\mathrm{min}}}}
+\newcommand{\mlqmax}{\ensuremath{m_{\mathrm{LQ}}^{\mathrm{max}}}}
+\newcommand{\mlq}{\ensuremath{m_{\mathrm{LQ}}}}
+\newcommand{\mlqt}{\ensuremath{m_{\mathrm{LQ}}^{\mathrm{T}}}}
+\newcommand{\mlqavg}{\ensuremath{m_{\mathrm{LQ}}^{\mathrm{avg}}}}
+\newcommand{\mlqdiff}{\ensuremath{m_{\mathrm{LQ}}^{\mathrm{diff}}}}
+\newcommand{\mlqreldiff}{\ensuremath{m_{\mathrm{LQ}}^{\mathrm{relDiff}}}}
+\newcommand{\mumujj}{\ensuremath{\mu\mu}\textit{jj}\xspace}
+\newcommand{\munujj}{\ensuremath{\mu\nu}\textit{jj}\xspace}
+\newcommand{\eejj}{\textit{eejj}\xspace}
+\newcommand{\enujj}{\textit{e}\ensuremath{\nu}\textit{jj}\xspace}
+\newcommand{\emujj}{\textit{e}\ensuremath{\mu}\textit{jj}\xspace}
+\newcommand{\mjj}{\ensuremath{m_{jj}}}
+\newcommand{\tautaujj}{\ensuremath{\tau\tau}\textit{jj}\xspace}
+\newcommand{\mmumu}{\ensuremath{m_{mu\mu}}}
+\newcommand{\mee}{\ensuremath{m_{ee}}}
+\newcommand{\mlqone}{\ensuremath{m_{\mathrm{LQ1}}}}
+\newcommand{\mlqtwo}{\ensuremath{m_{\mathrm{LQ2}}}}
+\newcommand{\st}{\ensuremath{S_{\mathrm{T}}}}
+\newcommand{\htjets}{\ensuremath{H_{\mathrm{T}}}}
+\newcommand{\lt}{\ensuremath{L_{\mathrm{T}}}}
+\newcommand{\zcr}{\ensuremath{Z}~CR}
+\newcommand{\wcr}{\ensuremath{W}~CR}
+\newcommand{\ttbarcr}{\ensuremath{t\bar{t}}~CR}
+
+\def\tauzero{\ensuremath{\tau_0}}
+\def\jetzero{\ensuremath{j_0}}
+\def\ezero{\ensuremath{e_0}}
+\def\muzero{\ensuremath{\mu_0}}
+\def\lzero{\ensuremath{l_0}}
+\def\tauone{\ensuremath{\tau_1}}
+\def\jetone{\ensuremath{j_1}}
+\def\eone{\ensuremath{e_1}}
+\def\muone{\ensuremath{\mu_1}}
+\def\lone{\ensuremath{l_1}}
+
+\def\lzeropt{\ensuremath{p_\mathrm{T}^{l0}}}
+\def\lzeroeta{\ensuremath{\eta^{l0}}}
+\def\lzerophi{\ensuremath{\phi^{l0}}}
+\def\lonept{\ensuremath{p_\mathrm{T}^{l1}}}
+\def\loneeta{\ensuremath{\eta^{l1}}}
+\def\lonephi{\ensuremath{\phi^{l1}}}
+\def\ltwopt{\ensuremath{p_\mathrm{T}^{l2}}}
+\def\ltwoeta{\ensuremath{\eta^{l2}}}
+\def\ltwophi{\ensuremath{\phi^{l2}}}
+\def\elonept{\ensuremath{p_\mathrm{T}^{e1}}}
+\def\eloneeta{\ensuremath{\eta^{e1}}}
+\def\elonephi{\ensuremath{\phi^{e1}}}
+\def\eltwopt{\ensuremath{p_\mathrm{T}^{e2}}}
+\def\eltwoeta{\ensuremath{\eta^{e2}}}
+\def\eltwophi{\ensuremath{\phi^{e2}}}
+\def\muonept{\ensuremath{p_\mathrm{T}^{\mu1}}}
+\def\muoneeta{\ensuremath{\eta^{\mu1}}}
+\def\muonephi{\ensuremath{\phi^{\mu1}}}
+\def\mutwopt{\ensuremath{p_\mathrm{T}^{\mu2}}}
+\def\mutwoeta{\ensuremath{\eta^{\mu2}}}
+\def\mutwophi{\ensuremath{\phi^{\mu2}}}
+\def\tauzeropt{\ensuremath{p_\mathrm{T}^{\tau0}}}
+\def\tauzeroeta{\ensuremath{\eta^{\tau0}}}
+\def\tauzerophi{\ensuremath{\phi^{\tau0}}}
+\def\tauonept{\ensuremath{p_\mathrm{T}^{\tau1}}}
+\def\tauoneeta{\ensuremath{\eta^{\tau1}}}
+\def\tauonephi{\ensuremath{\phi^{\tau1}}}
+\def\jetzeropt{\ensuremath{p_\mathrm{T}^{j0}}}
+\def\jetzeroeta{\ensuremath{\eta^{j0}}}
+\def\jetzerophi{\ensuremath{\phi^{j0}}}
+\def\jetonept{\ensuremath{p_\mathrm{T}^{j1}}}
+\def\jetoneeta{\ensuremath{\eta^{j1}}}
+\def\jetonephi{\ensuremath{\phi^{j1}}}
+\def\jettwopt{\ensuremath{p_\mathrm{T}^{j2}}}
+\def\jettwoeta{\ensuremath{\eta^{j2}}}
+\def\jettwophi{\ensuremath{\phi^{j2}}}
+\def\dphi{\ensuremath{\Delta \phi}}
+\def\deta{\ensuremath{\Delta \eta}}
+\def\dr{\ensuremath{\Delta R}}
+\def\njet{\ensuremath{N_\mathrm{jet}}}
+\def\nbjet{\ensuremath{N_\mathrm{b-jet}}}
+\def\mlljj{\ensuremath{m_{lljj}}}
+\def\ptll{\ensuremath{p_\mathrm{T}^{ll}}}
+\def\dphijj{\ensuremath{\Delta \phi_{jj}}}
+\def\detajj{\ensuremath{\Delta \eta_{jj}}}
+\def\dphill{\ensuremath{\Delta \phi_{ll}}}
+\def\detall{\ensuremath{\Delta \eta_{ll}}}
+\def\mindphijonel{\ensuremath{\mathrm{min}(|\Delta \phi(j1, l1)|, |\Delta \phi(j1, l2)|)}}
+\def\mindphijtwol{\ensuremath{\mathrm{min}(|\Delta \phi(j2, l1)|, |\Delta \phi(j2, l2)|)}}
+\def\mindrjonel{\ensuremath{\mathrm{min}(\Delta R(j1, l1), \Delta R(j1, l2))}}
+\def\mindrjtwol{\ensuremath{\mathrm{min}(\Delta R(j2, l1), \Delta R(j2, l2))}}
+\def\dphijonell{\ensuremath{\Delta \phi(j1, ll)}}
+\def\dphijtwoll{\ensuremath{\Delta \phi(j2, ll)}}
+\def\dphilqlq{\ensuremath{\Delta \phi_{\LQ\LQ}}}
+\def\detalqlq{\ensuremath{\Delta \eta_{\LQ\LQ}}}
+\def\drlqlq{\ensuremath{\Delta R_{\LQ\LQ}}}
+\def\dphitaumet{\ensuremath{\Delta \phi(\tau, \met)}\xspace}
+\def\mttaumet{\ensuremath{m_\mathrm{T}(\tau, \met)}\xspace}
+%
+%
+%
+\def\dR{\ensuremath{\Delta R}\xspace}
+\def\abseta{\ensuremath{|\eta|}\xspace}
+\def\pt{\ensuremath{p_{\mathrm{T}}}\xspace} 
+\def\pT{\ensuremath{p_{\mathrm{T}}}\xspace} 
+\def\et{\ensuremath{E_{\mathrm{T}}}\xspace} 
+\def\eT{\ensuremath{E_{\mathrm{T}}}\xspace} 
+\def\ET{\ensuremath{E_{\mathrm{T}}}\xspace}
+\def\MET{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}}\xspace} 
+\def\met{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}}\xspace}
+\def\metsig{\ensuremath{(E_{\mathrm{T}}^{\mathrm{miss}})_\mathrm{Sig}}\xspace}
+\def\ptmiss{\ensuremath{\mathrm{p_{T}^{miss}}}\xspace}
+%
+%
+%
+\def\antibar#1{\ensuremath{#1\bar{#1}}\xspace}
+\def\bbar{\ensuremath{\bar{b}}\xspace}
+\def\ccbar{\antibar{c}\xspace}
+\def\tbar{\ensuremath{\bar{t}}\xspace}
+\def\ttbar{\antibar{t}\xspace}
+\def\qbar{\ensuremath{\bar{q}}\xspace}
+\def\qqbar{\antibar{q}\xspace}
+\def\invfb{\mbox{fb$^{-1}$}\xspace}
+\def\mass#1{\ensuremath{m_{#1#1}}\xspace}
+\def\twomass#1#2{\ensuremath{m_{#1#2}}\xspace}
+\def\sqrts {\ensuremath{\sqrt{s}}\xspace}
+%
+\newcommand{\etcone}{\ensuremath{E_{\mathrm{T}}^{\mathrm{cone20}}}}
+% lmetdef.sty
+%
+% Latex macros for use with lepton+MET notes.
+%
+% David Adams
+% July 2010
+
+\def\pbar{\ensuremath{\bar{p}}}
+\def\ppbar{\antibar{p}}
+\def\pp{\ensuremath{pp}}
+
+\def\mm{\ensuremath{\mathrm{\ mm}}}
+\def\ns{\ensuremath{\mathrm{\ ns}}}
+\def\itev{\ensuremath{\tev^{-1}}}
+\def\pb{\ensuremath{\mathrm{\ pb}}}
+\def\tev{\ensuremath{\mathrm{\ TeV}}}
+\def\gev{\ensuremath{\mathrm{\ GeV}}}
+\def\mev{\ensuremath{\mathrm{\ MeV}}}
+
+% Hack for missing Et
+% We replace the ATLAS-standard definition so we can add a subscript calo or muon.
+% Drop this--it does not look good in fractions.
+%\newtoks\nslashfraction
+% \nslashfraction={.13}
+% \newcommand{\nslash}[1]{\setbox0\hbox{$ #1 $}
+%   \setbox0\hbox to \the\nslashfraction\wd0{\hss \box0}/\box0 }
+%\def\met{\ensuremath{\nslash E_{\mathrm{T}}}}
+%\def\metcalo{\ensuremath{\nslash E_{\mathrm{T}}^{\mathrm{calo}}}}
+%\def\metmuon{\ensuremath{\nslash E_{\mathrm{T}}^{\mathrm{muon}}}}
+
+% Suggested by Giovanni--doesn't work for me.
+\def\metgio {\ensuremath{\not\!\!\!\E_T }}
+
+% For linaliang
+\newcommand{\rar}{\rightarrow}
+
+% Remove spacing in V-A
+\def\vminusa{\ensuremath{\ifmmode {V\kern -0.3em - \kern -0.15em A}}}
+\def\vplusa{\ensuremath{\ifmmode {V\kern -0.3em + \kern -0.15em A}}}
+
+% Options for nice missing ET. Not for use in equations.
+% Choose one of the following.
+\def\mettext{missing \et}         
+\def\mettextcap{Missing \et}         
+%\def\mettext{\met}
+\def\met{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+\def\vecmet{\ensuremath{{\mathbf E_{\mathrm{T}}^{\mathrm{miss}}}}} % Sub/superscript roman not italic (EE)
+\def\mex{\ensuremath{E_{\mathrm{x}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+\def\mey{\ensuremath{E_{\mathrm{y}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+
+% Missing ET terms.
+\def\metcalo{\ensuremath{E_{\mathrm{Tcalo}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+\def\vecmetcalo{\ensuremath{{\mathbf E_{\mathrm{Tcalo}}^{\mathrm{miss}}}}} % Sub/superscript roman not italic (EE)
+\def\metmuon{\ensuremath{E_{\mathrm{Tmuon}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+\def\metrem{\ensuremath{E_{\mathrm{Trem}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+\def\metnl{\ensuremath{E_{\mathrm{Tnl}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+\def\vecmetnl{\ensuremath{{\mathbf E_{\mathrm{Tnl}}^{\mathrm{miss}}}}} % Sub/superscript roman not italic (EE)
+\def\metnlsmear{\ensuremath{{\mathbf E_{\mathrm{Tnl,smear}}^{\mathrm{miss}}}}} % Sub/superscript roman not italic (EE)
+\def\metpara{\ensuremath{E_{\mathrm{Tpara}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+\def\metperp{\ensuremath{E_{\mathrm{Tperp}}^{\mathrm{miss}}}} % Sub/superscript roman not italic (EE)
+
+% ET terms.
+\def\etmucalo{\ensuremath{E_{\mathrm{T\mu,calo}}}}
+
+% Particles
+\def\w{\ensuremath{W}\xspace}
+\def\wp{\ensuremath{W'}\xspace}
+\def\wstar{\ensuremath{W^*}\xspace}
+\def\wstarplus{\ensuremath{W^{*+}\xspace}}
+\def\wstarminus{\ensuremath{W^{*-}\xspace}}
+\def\wps{\ensuremath{W'/W^*}\xspace}
+\def\z{\ensuremath{Z}\xspace}
+\def\zp{\ensuremath{Z'}\xspace}
+\def\zpll{\ensuremath{Z' \rightarrow \ell \ell}\xspace}
+\def\e{\ensuremath{e}\xspace}
+\def\taulep{$\tau$-lepton}
+\def\tauleps{$\tau$-leptons}
+\def\wimp{\ensuremath{\chi}\xspace}
+\def\mstar{\ensuremath{M_{*}}\xspace}
+\def\zjets{\ensuremath{Z+}jets\xspace}
+\def\wjets{\ensuremath{W+}jets\xspace}
+\def\vjets{\ensuremath{V+}jets\xspace}
+\def\hadhad{\ensuremath{\tau_\mathrm{had}\tau_\mathrm{had}}\xspace}
+\def\lephad{\ensuremath{\tau_\mathrm{lep}\tau_\mathrm{had}}\xspace}
+
+% Di-bosons
+\def\wwdib{\ensuremath{WW}\xspace}
+\def\zzdib{\ensuremath{ZZ}\xspace}
+\def\wzdib{\ensuremath{WZ}\xspace}
+
+% WZ bg.
+\def\zg{\ensuremath{Z/\gamma^{*}}\xspace}
+\def\wzbg{\ensuremath{W/Z}\xspace}
+
+% Decay channels
+\def\lnu{\ensuremath{\ell \nu}\xspace}
+\def\enu{\ensuremath{e\nu}\xspace}
+\def\munu{\ensuremath{\mu\nu}\xspace}
+\def\wlnu{\ensuremath{W\rightarrow \ell \nu}\xspace}
+\def\wenu{\ensuremath{W(e\nu)}\xspace}
+\def\wmunu{\ensuremath{W(\mu\nu)}\xspace}
+\def\wtaunu{\ensuremath{W\rightarrow \tau \nu}\xspace}
+\def\wtaunulnunu{\ensuremath{W\rightarrow\tau\nu\rightarrow\ell\nu\nu}\xspace}
+\def\wrlnu[#1]{\ensuremath{W(#1) \rightarrow \lnu}\xspace}
+\def\zll{\ensuremath{Z\rightarrow \ell \ell}\xspace}
+\def\gll{\ensuremath{\gamma*\rightarrow \ell \ell}\xspace}
+\def\zgll{\ensuremath{Z/\gamma^{*}\rightarrow \ell \ell}\xspace}
+\def\zee{\ensuremath{Z\rightarrow e e}\xspace}
+\def\zree[#1]{\ensuremath{Z(#1)\rightarrow e e}\xspace}
+\def\zmumu{\ensuremath{Z(\mu\mu)}\xspace}
+\def\zrmumu[#1]{\ensuremath{Z(#1)\rightarrow \mu \mu}\xspace}
+\def\zgmumu{\ensuremath{Z/\gamma*\rightarrow \mu \mu}\xspace}
+\def\ztautau{\ensuremath{Z\rightarrow\tau\tau}\xspace}
+\def\wgame{\ensuremath{W\gamma\rightarrow e\nu\gamma}\xspace}
+\def\wgammu{\ensuremath{W\gamma\rightarrow \mu\nu\gamma}\xspace}
+\def\wpe{\ensuremath{W'\rightarrow e \nu}\xspace}
+\def\wpmu{\ensuremath{W'\rightarrow \mu \nu}\xspace}
+\def\wptau{\ensuremath{W'\rightarrow \tau \nu}\xspace}
+\def\wpse{\ensuremath{\wps\rightarrow e \nu}\xspace}
+\def\wpsmu{\ensuremath{\wps\rightarrow \mu \nu}\xspace}
+\def\wpl{\ensuremath{W'\rightarrow \ell \nu}\xspace}
+\def\wpqq{\ensuremath{W'\rightarrow \qqbar}\xspace}
+\def\wpwz{\ensuremath{W'\rightarrow WZ}\xspace}
+\def\wse{\ensuremath{W^*\rightarrow e \nu}\xspace}
+\def\wsmu{\ensuremath{W^*\rightarrow \mu \nu}\xspace}
+\def\wsl{\ensuremath{W^*\rightarrow \ell \nu}\xspace}
+\def\wpsl{\ensuremath{\wps\rightarrow \ell \nu}\xspace}
+\def\gj{\ensuremath{\gamma j}\xspace}
+\def\mutau{\ensuremath{\mu\tau}\xspace}
+
+% Decays with explicit masses.
+\def\wplm[#1]{\ensuremath{W'(#1)\rightarrow \ell \nu}\xspace}
+\def\wpem[#1]{\ensuremath{W'(#1)\rightarrow e \nu}\xspace}
+\def\wpmum[#1]{\ensuremath{W'(#1)\rightarrow \mu \nu}\xspace}
+
+% quarks
+\def\ccbarmu{\ensuremath{\ccbar \rightarrow \mu X}\xspace}
+\def\bbbarmu{\ensuremath{\bbbar \rightarrow \mu X}\xspace}
+\def\ttbarl{\ensuremath{\ttbar\rightarrow \ell X}\xspace}
+\def\wtopx{\ensuremath{t W \rightarrow X}\xspace}
+\def\topex{\ensuremath{t \rightarrow e X}\xspace}
+\def\topmux{\ensuremath{t \rightarrow \mu X}\xspace}
+\def\toptaux{\ensuremath{t \rightarrow \tau X}\xspace}
+
+% Dijet samples.
+\newcommand\jjr[1]{\ensuremath{jj(#1)}\xspace}
+\newcommand\jjmur[1]{\ensuremath{jj(#1)\rightarrow \mu X}\xspace}
+
+%\def\jjr[1]{\ensuremath{jj(#1)}\xspace}
+
+% Phi and theta for text
+\def\myphi{\ensuremath{\varphi}\xspace}
+\def\myeta{\ensuremath{\eta}\xspace}
+\def\mytheta{\ensuremath{\theta}\xspace}
+
+% p_perp
+\def\pperp{\ensuremath{p_{\perp}\xspace}}
+%\def\pt{\ensuremath{p_{T}\xspace}}
+\def\px{\ensuremath{p_{x}\xspace}}
+\def\py{\ensuremath{p_{y}\xspace}}
+
+% pT.
+\def\vecpt{\mathbf \ptmu}
+\def\ptl{\ensuremath{\pt^{\ell}\xspace}}
+\def\ptv{\ensuremath{\pt^{V}\xspace}}
+\def\ptw{\ensuremath{\pt^{W}\xspace}}
+\def\ptlmet{\ensuremath{\pt^{\ell,MET}\xspace}}
+\def\pte{\ensuremath{\pt^{\e}\xspace}}
+\def\ptmu{\ensuremath{\pt^{\mu}\xspace}}
+\def\ptnu{\ensuremath{\pt^{\nu}\xspace}}
+\def\ptlepton{\ensuremath{\pt^{\rm \ell}\xspace}} % was lepton
+\def\pttrack{\ensuremath{\pt^{\rm trk}\xspace}}
+\def\vecpte{\mathbf \pte}
+\def\vecptmu{\mathbf \ptmu}
+\def\vecptlepton{\mathbf \ptlepton}
+\def\vecptnu{\mathbf \ptnu}
+
+% p, q/p
+\def\p{\ensuremath{p}\xspace}
+\def\qp{\ensuremath{q/p}\xspace}
+\def\qpinit{\ensuremath{{(q/p)}_\mathrm{ini}\xspace}}
+\def\qpt{\ensuremath{q/\pt}\xspace}
+\def\qptid{\ensuremath{\qpt^{\rm ID}\xspace}}
+\def\qptms{\ensuremath{\qpt^{\rm MS}\xspace}}
+
+\def\aqpt{\ensuremath{A_{\qpt}\xspace}}
+\def\curvoff{\ensuremath{\kappa_{0}\xspace}}
+
+% eta
+\def\etal{\ensuremath{\eta^{\ell}\xspace}}
+\def\etae{\ensuremath{\eta^{\e}\xspace}}
+
+% MT
+\def\mt{\ensuremath{m_{\mathrm T}\xspace}}
+\def\mllt{\ensuremath{m_{\mathrm T}\xspace}}
+\def\mtmin{\ensuremath{m_{\mathrm{Tmin}\xspace}}\xspace}
+
+% W' mass
+\def\mw{\ensuremath{m_{W}\xspace}}
+\def\mz{\ensuremath{m_{Z}\xspace}}
+\def\mwp{\ensuremath{m_{W'}\xspace}}
+\def\mws{\ensuremath{m_{W^*}\xspace}}
+\def\mwps{\ensuremath{m_{\wps}\xspace}}
+\def\mlnu{\ensuremath{m_{\ell\nu}\xspace}}
+\def\mdm{\ensuremath{m_{\chi}}\xspace}
+
+% SumET
+\def\sumet{\ensuremath{\sum \et}}
+\def\sumetcorr{\ensuremath{\sum_{\rm corr} \et}}
+\def\vecet{\ensuremath{\mathbf E_{\mathrm T}}}
+\def\vecetclus{\ensuremath{\mathbf E_{\mathrm T}^{\mathrm{clus}}}}
+\def\vecetcell{\ensuremath{\mathbf E_{\mathrm T}^{\mathrm{cell}}}}
+\def\vecsumet{\ensuremath{\sum \vecet}}
+\def\vecsumettopo{\ensuremath{\sum_\mathrm{topo} \vecetcell}}
+
+\def\vecetlossmu{\ensuremath{{\mathbf E_\mathrm{T}^{\mu,\mathrm{loss}}}}}
+
+% SumpT
+\def\sumpt{\ensuremath{\sum \pt}}
+\def\sumpttrack{\ensuremath{{\tiny \sum} \pttrack}}
+
+% Isolation
+\def\etisol{\ensuremath{E_{\mathrm{T}}^{\mathrm{isol}}}}
+\def\ptisol{\ensuremath{p_{\mathrm{T}}^{\mathrm{isol}}}}
+\def\risol{\ensuremath{R_{\mathrm{isol}}}}
+
+% Integrated luminosity.
+\def\lint{\ensuremath{L_{\rm int}}}
+\def\meanlint{\ensuremath{\bar{L}_{\rm int}}}
+\def\siglint{\ensuremath{\sigma_{\rm Lint}}}
+
+% Efficiency.
+\def\eff{\ensuremath{\varepsilon}}
+\def\efffake{\ensuremath{\varepsilon_{\rm fake}}}
+\def\effreal{\ensuremath{\varepsilon_{\rm real}}}
+\def\effsig{\ensuremath{\varepsilon_{\rm sig}}}
+\def\meaneff{\ensuremath{\bar{\eff}}}
+\def\effdata{\ensuremath{\eff_{\rm data}}}
+\def\effdatamc{\ensuremath{\effdata/\effmc}}
+\def\effmc{\ensuremath{\eff_{\rm MC}}}
+\def\effsigmc{\ensuremath{\eff_{\rm sig}^{\rm MC}}}
+\def\sigeff{\ensuremath{\sigma_{\varepsilon}}}
+\def\erreff{\ensuremath{\sigma(\varepsilon)}}
+\def\relerreff{\ensuremath{\sigma(\varepsilon)/\varepsilon}}
+\def\effbgk{\ensuremath{\varepsilon^{{\rm bg}k}}}
+\def\effmcbgk{\ensuremath{\varepsilon_{\rm MC}^{{\rm bg}k}}}
+\def\effreal{\ensuremath{\eff_{\rm real}}}
+\def\efffake{\ensuremath{\eff_{\rm fake}}}
+
+% Efficiency correction factors.
+\def\cor{\ensuremath{C}}
+\def\cori{\ensuremath{C_i}}
+\def\coreMET{\ensuremath{C^e_{MET}}}
+\def\coretrig{\ensuremath{C^e_{trig}}}
+\def\corereco{\ensuremath{C^e_{reco}}}
+\def\corelscale{\ensuremath{C^e_{lscale}}}
+\def\corelres{\ensuremath{C^e_{lres}}}
+\def\corevert{\ensuremath{C^e_{\rm vtx}}}
+\def\meancor{\ensuremath{\bar{C}}}
+\def\errcor{\ensuremath{\sigma(C)}}
+\def\errcori{\ensuremath{\sigma(C_i)}}
+\def\relerrcori{\ensuremath{\sigma(C_i)/C_i}}
+\def\cormu{\cor^{\rm \mu}}
+\def\cormutrig{\cormu_{\rm trig}}
+\def\corbgk{\ensuremath{C^{{\rm bg}k}}}
+\def\corbgki{\ensuremath{C^{{\rm bg}k}_{i}}}
+\def\corbgklscale{\ensuremath{C^{{\rm bg}k}_{lscale}}}
+\def\corbgklres{\ensuremath{C^{{\rm bg}k}_{lres}}}
+\def\corbgkvert{\ensuremath{C^{{\rm bg}k}_{\rm vtx}}}
+\def\corbgktrig{\ensuremath{C^{{\rm bg}k}_{trig}}}
+\def\corbgkreco{\ensuremath{C^{{\rm bg}k}_{reco}}}
+
+% cross section times BR
+\def\xbr{\ensuremath{\sigma B}}
+\def\xbrp{\ensuremath{(\sigma B)}}
+\def\xbrfid{\ensuremath{\sigma_{\rm fid} B}}
+
+% Event counts.
+\def\nexp{\ensuremath{N_{\rm exp}}}
+\def\nobs{\ensuremath{N_{\rm obs}}}
+\def\nsig{\ensuremath{N_{\rm sig}}}
+\def\nevt{\ensuremath{N_{\rm evt}}}
+\def\nbg{\ensuremath{N_{\rm bg}}}
+\def\nbgk{\ensuremath{N_{\rm{bg}k}}}
+\def\nbgmc{\ensuremath{N_{\rm bg}^{\rm MC}}}
+\def\nbgrem{\ensuremath{N_{\rm bg}^{\rm rem}}}
+\def\nbgwz{\ensuremath{N_{{\rm bg:}\wzbg}}}
+\def\nbgttbar{\ensuremath{N_{{\rm bg:}\ttbar}}}
+\def\nbgqcd{\ensuremath{N_{\rm bg:QCD}}}
+\def\nbgnom{\ensuremath{N_{\rm bg}^{\rm nom}}}
+\def\npred{\ensuremath{N_{\rm pred}}}
+\def\nevta{\ensuremath{N_{\rm evt}^{\rm A}}}
+\def\nevtb{\ensuremath{N_{\rm evt}^{\rm B}}}
+\def\nevtc{\ensuremath{N_{\rm evt}^{\rm C}}}
+\def\nevtd{\ensuremath{N_{\rm evt}^{\rm D}}}
+
+% Vertex
+\def\zvtx{\ensuremath{z_{\rm vtx}}}
+\def\nvtx{\ensuremath{N_{\rm vtx}}}
+
+% Background scale factors.
+\def\scori{\ensuremath{s_{i}}}
+\def\scorw{\ensuremath{s_{W}}}
+\def\scorqcd{\ensuremath{s_{QCD}}}
+
+% Background cross section (including BF, acceptance and selection)
+\def\bgk{\ensuremath{{{\rm bg}k}}}
+\def\xsecbg{\ensuremath{\sigma_{bg}}}
+\def\xsecbgk{\ensuremath{\sigma^{{\rm bg}k}}}
+
+% Fiducial quantitites.
+\def\xsfid{\ensuremath{\sigma_{\rm fid}}}
+\def\afid{\ensuremath{A_{\rm fid}}}
+\def\efffid{\ensuremath{\eff_{\rm fid}}}
+
+% Nuisance parameters.
+\def\nps{\ensuremath{\theta_1,...,\theta_N}}
+\def\np{\ensuremath{\theta}}
+\def\npi{\ensuremath{\theta_i}}
+\def\npone{\ensuremath{\theta_1}}
+\def\npn{\ensuremath{\theta_N}}
+\def\npmeani{\ensuremath{\bar{\theta}_i}}
+\def\nperri{\ensuremath{\sigma_i}}
+\def\pdfi{\ensuremath{g_i(\npi)}}
+
+% Bayesian stuff.
+\def\ppost{\ensuremath{P_{\rm post}}}
+\def\pprior{\ensuremath{P_{\rm prior}}}
+\def\bdisc{\ensuremath{B_{\rm disc}}}
+
+% Program names
+\def\pythia{{\sc Pythia}}
+\def\pythia8{{\sc Pythia8}}
+\def\powheg{{\sc Powheg}}
+\def\powhegbox{{\sc Powheg-Box}}
+\def\acerMC{{\sc AcerMC}}
+\def\sherpa{{\sc Sherpa}}
+\def\sherpa21{{\sc Sherpa2.1}}
+\def\madgraph{{\sc Madgraph 5}}
+\def\herwig{{\sc Herwig}}
+\def\alpgen{{\sc Alpgen}}
+\def\comphep{{\sc CompHEP}}
+\def\calchep{{\sc CalcHEP}}
+\def\jimmy{{\sc Jimmy}}
+\def\photos{{\sc Photos}}
+\def\geant{{\sc Geant}}
+\def\mclimit{{\sc Mclimit}}
+\def\madgraphFive{{\sc Madgraph5}}
+%\def\mcatnlo{{\sc Mc@nlo}}
+\def\topPP{{\sc Top++}}
+\def\mcatnlo{MC@NLO}
+\def\horace{{\sc Horace}}
+\def\isem{{\sc isEM}}
+\def\loose{{``loose''}}
+\def\rloose{{``robust loose''}}
+\def\Medium{{``Medium''}}
+\def\medium{{``medium''}}
+\def\Rmedium{{``Robust medium''}}
+\def\rmedium{{``robust medium''}}
+\def\tight{{``tight''}}
+\def\rtight{{``robuster tight''}}
+%\def\loose{{\it loose}}
+%\def\medium{{\it medium}}
+%\def\tight{{\it tight}}
+\def\egamma{{egamma}}
+
+% Momentum smearing.
+\def\bbar{\ensuremath{B_{\rm bar}}}
+\def\bend{\ensuremath{B_{\rm end}}}
+\def\szero{\ensuremath{S_0}}
+\def\sone{\ensuremath{S_1}}
+\def\stwo{\ensuremath{S_2}}
+\def\sp{\ensuremath{S_p}}
+\def\soff{\ensuremath{S_o}}
+\def\ran{\ensuremath{g}}
+\def\ranzero{\ensuremath{g_0}}
+\def\ranone{\ensuremath{g_1}}
+\def\rantwo{\ensuremath{g_2}}
+
+% MET smearing
+\def\metscale{\ensuremath{S_m}}
+\def\metres{\ensuremath{S_r}}
+
+% Trigger.
+\def\l1em14{L1\_EM14}
+\def\efe20loose{EF\_20\_loose}
+
+% Track hit counts.
+\def\nhitpixel{\ensuremath{N_{hit}^{pixel}}}
+\def\nhitsct{\ensuremath{N_{hit}^{SCT}}}
+\def\nhitmdt{\ensuremath{N_{hit}^{MDT}}}
+\def\nlayerrpc{\ensuremath{N_{layer}^{RPC}}}
+\def\nlayerrpcphi{\ensuremath{N_{layer}^{RPC\varphi}}}
+\def\nphistation{\ensuremath{N_{station}^{\varphi}}}
+
+% Units
+\def\imib{\ensuremath{\mu b^{-1}}}%  Inverse microbarns.
+
+% stats
+\def\cls{\ensuremath{CL_s}}
+\def\clb{\ensuremath{CL_b}}
+\def\clsb{\ensuremath{CL_{s+b}}}
+\def\clbayes{\ensuremath{CL_\mathrm{bayes}}}
+
+% For ABCD bg.
+\def\na{\ensuremath{N_{\rm A}}}
+\def\nb{\ensuremath{N_{\rm B}}}
+\def\nc{\ensuremath{N_{\rm C}}}
+\def\nd{\ensuremath{N_{\rm D}}}
+
+% For matrix method.
+\def\ntight{\ensuremath{N_{\rm tight}}}
+\def\nloose{\ensuremath{N_{\rm loose}}}
+\def\ntightreal{\ensuremath{N_{\rm tight}^{\rm real}}}
+\def\ntightfake{\ensuremath{N_{\rm tight}^{\rm fake}}}
+\def\nloosereal{\ensuremath{N_{\rm loose}^{\rm real}}}
+\def\nloosefake{\ensuremath{N_{\rm loose}^{\rm fake}}}
+
+% Impact parameters.
+\def\rzero{\ensuremath{r_0}}
+\def\zzero{\ensuremath{z_0}}
+\def\rzzero{\ensuremath{r_0\mbox{-}z_0}}
+
+% K-factors
+\def\k{\ensuremath{K}}
+\def\kqcd{\ensuremath{K_{\rm QCD}}}
+\def\kqcdew{\ensuremath{K_{\rm QCD+EW}}}
+\def\kqcdewrad{\ensuremath{K_{\rm QCD+EW+rad}}}
+\def\knnlo{\ensuremath{K_{\rm NNLO}}}
+\def\knnloew{\ensuremath{K_{\rm NNLO+EW}}}
+\def\knnloewrad{\ensuremath{K_{\rm NNLO+EW+rad}}}
+\def\kfid{\ensuremath{K_{\rm fid}}}
+\def\ktot{\ensuremath{K_{\rm tot}}}
+\def\kew{\ensuremath{K_{\rm EW}}}
+\def\krad{\ensuremath{K_{\rm rad}}}
+\def\knlo{\ensuremath{K_{\rm NLO}}}
+\def\kpar{\ensuremath{K_{\rm par}}}
+
+% CLs stuff.
+\def\xi{\ensuremath{x_i}}
+\def\si{\ensuremath{s_i}}
+\def\bi{\ensuremath{b_i}}
+\def\oi{\ensuremath{o_i}}
+\def\opi{\ensuremath{o'_i}}
+\def\xvec{\ensuremath{\mathbf x}}
+\def\svec{\ensuremath{\mathbf s}}
+\def\bvec{\ensuremath{\mathbf b}}
+\def\ovec{\ensuremath{\mathbf o}}
+\def\spvec{\ensuremath{\mathbf s'}}
+\def\bpvec{\ensuremath{\mathbf b'}}
+\def\opvec{\ensuremath{\mathbf o'}}
+
+% For limits.
+\def\lc{${\mathrm L_{\mathrm c}}$}
+\def\bc{${\mathrm B_{\mathrm c}}$}
+
+% Temporary to view Sawagato's text.
+\def\taueg{\ensuremath{TAUEG}}
+\def\taulg{\ensuremath{TAULG}}
+\def\taumg{\ensuremath{TAUEM}}
+\def\ntaudecays{\ensuremath{NTAUDECAYS}}
+\def\BR{\ensuremath{BR}}
+
+% Environment to itemize with single spacing.
+\newenvironment{myitemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+% Extra spacing for cells in tables.
+\newcommand\tspace{\rule{0pt}{2.4ex}}             % Extra spacing for top of cell
+\newcommand\bspace{\rule[-1.2ex]{0pt}{0pt}}       % Extra spacing for bottom of cell
+
