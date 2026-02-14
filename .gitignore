@@ -11,3 +11,4 @@
 **/*.bcf
 # Other files to ignore
 02_quiz/data.txt
+.ipynb_checkpoints/
