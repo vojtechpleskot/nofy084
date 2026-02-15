@@ -1,6 +1,6 @@
 \documentclass[9pt]{beamer}
-%\usepackage[utf8]{inputenc}
-\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[czech]{babel}
 %\usepackage{slashed}
 %\usepackage{axodraw}
 %\usepackage{xcolor}
@@ -197,7 +197,6 @@ print(my_dict)
 \item C) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
 \item D) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 \item E) {(0, 1, 2, 3, 4): (0, 1, 4, 9, 16)}
-\item F) {(1, 2, 3, 4, 5): (1, 4, 9, 16, 25)}
 \end{itemize}
 \end{frame}
 
@@ -222,7 +221,7 @@ print(a, b)
 \begin{frame}[fragile]
   Jak získat obsah souboru 'file.txt' načtený do proměnné \texttt{data}?
 \begin{itemize}
-\item A) Sezame, otevři se!
+\item A) print("Sezame, otevři se!")
 \item B) data = open('file.txt', 'r')
 \item C) with open('file.txt', 'r') as f: data = f.read()
 \item D) f = 'file.txt'; data = f.read()
@@ -272,8 +271,8 @@ print(a + b)
 \item A)
 \begin{lstlisting}
 [[1 2 3]
- [1 2 3]
- [1 2 3]]
+ [2 4 6]
+ [3 6 9]]
 \end{lstlisting}
 \item B) 14
 \item C) [1 4 9]
