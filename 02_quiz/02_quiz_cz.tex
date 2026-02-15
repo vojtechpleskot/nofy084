@@ -1,0 +1,314 @@
+\documentclass[9pt]{beamer}
+%\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+%\usepackage{slashed}
+%\usepackage{axodraw}
+%\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{unicode=true, colorlinks=true}
+\usepackage{graphicx}
+\usepackage{xspace}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\usetheme{Warsaw}
+\usepackage{variables}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    columns=flexible,         % Improves character spacing
+    showspaces=false,          % Removes the u-shaped space symbols
+    showstringspaces=false,    % Removes symbols inside 'strings'
+    showtabs=false,            % Removes symbols for tabs
+    breaklines=true,           % Wraps long lines
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange}
+}
+
+\newenvironment{narrow}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]
+}{\end{list}}
+
+\title[]{Kvíz}
+\author[Vojtech Pleskot]{Vojtech Pleskot\inst{1}} %use \and to separate two authors
+\institute[]{UK Praha\inst{1}}
+\date{}
+
+%\setbeamertemplate{headline}
+%{
+%  \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,leftskip=.3cm,rightskip=.3cm]{section in head/foot}
+%    \vskip2pt\insertsection \hskip20pt \insertsubsection\vskip2pt
+%  \end{beamercolorbox}
+%}
+
+\setbeamertemplate{footline}
+{
+%  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}
+%    \usebeamerfont{author in head/foot}\insertauthor
+%  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.0ex,dp=3.0ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}
+    \usebeamerfont{title in head/foot} \hfill \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}%}
+  \vskip0pt
+}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Toto je jednoduchý kvíz s jednou otázkou na snímek. Správná odpověď je odhalena na dalším snímku.
+% Pro každou otázku jsou čtyři až šest možných odpovědí.
+% Otázky jsou očíslovány od A do F.
+% Může existovat více správných odpovědí na každou otázku, ale alespoň jedna z odpovědí je správná.
+% Test zkouší znalosti univerzitních studentů programovacího jazyka Python a jeho knihoven, stejně jako jejich schopnost jej použít pro analýzu dat a vizualizaci.
+% Konkrétně je testována práce s řetězci, seznamy, slovníky, množinami, n-ticemi, funkcemi, třídami, moduly, balíčky a knihovnami jako NumPy, Matplotlib, SciPy a uncertainties.
+
+
+% Otázka na definici funkce
+\begin{frame}[fragile]
+  Jaká je hodnota proměnné \texttt{a} po provedení následujícího kódu?
+\begin{lstlisting}
+def func(x):
+    return x * 2
+a = func(3)
+\end{lstlisting}
+\begin{itemize}
+\item A) 5
+\item B) 6
+\item C) 9
+\item D) 1.5
+\end{itemize}
+\end{frame}
+
+% Otázka na indexování seznamu
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+my_list = [1, 2, 3]
+print(my_list[2])
+\end{lstlisting}
+\begin{itemize}
+\item A) [3]
+\item B) [1, 2]
+\item C) 3
+\item D) IndexError: list index out of range
+\end{itemize}
+\end{frame}
+
+% Otázka na formátování řetězců
+\begin{frame}[fragile]
+  Mějme proměnnou \texttt{x}, jejíž hodnota je 10. Který řetězec je roven "The value of x is 10"?
+\begin{itemize}
+\item A) "The value of x is " + str(x)
+\item B) "The value of x is 10"
+\item C) "The value of x is " + x
+\item D) f"The value of x is {x}"
+\item E) "The value of x is {}".format(x)
+\end{itemize}
+\end{frame}
+
+% Otázka na slovník
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+print(my_dict['b'])
+\end{lstlisting}
+\begin{itemize}
+\item A) 'b'
+\item B) 2
+\item C) {'b': 2}
+\item D) KeyError: 'b'
+\end{itemize}
+\end{frame}
+
+% Otázka na rozsah proměnné
+\begin{frame}[fragile]
+  Jaká je hodnota \texttt{x} po provedení následujícího kódu?
+\begin{lstlisting}
+x = 10
+def func():
+    x = 5
+    return x
+a = func()
+\end{lstlisting}
+\begin{itemize}
+\item A) None
+\item B) 5
+\item C) nan
+\item D) 10
+\end{itemize}
+\end{frame}
+
+% Otázka na operace s množinami
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+my_set = {1, 2, 3}
+my_set.add(3)
+print(my_set)
+\end{lstlisting}
+\begin{itemize}
+\item A) {1, 2, 3, 3}
+\item B) AttributeError: 'set' object has no attribute 'add'
+\item C) {1, 2, 3}
+\item D) 'Jak vám dupou králíci?'
+\end{itemize}
+\end{frame}
+
+% Otázka na řezy seznamu
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+my_list = [1, 2, 3, 4, 5]
+print(my_list[1:4])
+\end{lstlisting}
+\begin{itemize}
+\item A) [1, 2, 3]
+\item B) [2, 3, 4]
+\item C) [3, 4, 5]
+\item D) [1, 2, 3, 4]
+\item E) [2, 3, 4, 5]
+\end{itemize}
+\end{frame}
+
+% Otázka na slovníkové generátory
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}my_dict = {x: x**2 for x in range(5)}
+print(my_dict)
+\end{lstlisting}
+\begin{itemize}
+\item A) {1: 1, 2: 4, 3: 9, 4: 16}
+\item B) {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+\item C) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+\item D) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+\item E) {(0, 1, 2, 3, 4): (0, 1, 4, 9, 16)}
+\item F) {(1, 2, 3, 4, 5): (1, 4, 9, 16, 25)}
+\end{itemize}
+\end{frame}
+
+% Otázka na rozbalení n-tice
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+def func():
+    return 1, 2
+a, b = func()
+print(a, b)
+\end{lstlisting}
+\begin{itemize}
+\item A) (1, 2)
+\item B) 1 2
+\item C) 1, 2
+\item D) ValueError: too many values to unpack
+\end{itemize}
+\end{frame}
+
+% Otázka na čtení textového souboru
+\begin{frame}[fragile]
+  Jak získat obsah souboru 'file.txt' načtený do proměnné \texttt{data}?
+\begin{itemize}
+\item A) Sezame, otevři se!
+\item B) data = open('file.txt', 'r')
+\item C) with open('file.txt', 'r') as f: data = f.read()
+\item D) f = 'file.txt'; data = f.read()
+\item E) f = 'file.txt'; for line in f: data += line
+\end{itemize}
+\end{frame}
+
+% Otázka na import modulu
+\begin{frame}[fragile]
+  Jak vypočítat \texttt{sin(1)} pomocí modulu \texttt{math}?
+\begin{itemize}
+\item A) import math; sin(1)
+\item B) from math import sin; sin(1)
+\item C) import math as m; math.sin(1)
+\item D) import math; math.sin(1)
+\item E) chodit do kurzu NOFY084, bedlivě poslouchat a udělat všechny úkoly
+\end{itemize}
+\end{frame}
+
+% Otázka na sčítání NumPy polí
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+import numpy as np
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+print(a + b)
+\end{lstlisting}
+\begin{itemize}
+  \item A) [1 2 3] + [4 5 6]
+  \item B) [1 2 3 4 5 6]
+  \item C) [4 5 6 1 2 3]
+  \item D) [5 7 9]
+\end{itemize}
+\end{frame}
+
+% Otázka na násobení NumPy polí
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+  import numpy as np
+  a = np.array([1, 2, 3])
+  b = np.array([1, 2, 3])
+  print(a * b)
+\end{lstlisting}
+\begin{itemize}
+\item A)
+\begin{lstlisting}
+[[1 2 3]
+ [1 2 3]
+ [1 2 3]]
+\end{lstlisting}
+\item B) 14
+\item C) [1 4 9]
+\item D) [1 2 3] * [4 5 6]
+\end{itemize}
+\end{frame}
+
+% Otázka na broadcasting
+\begin{frame}[fragile]
+  Jaký je výstup následujícího kódu?
+\begin{lstlisting}
+import numpy as np
+a = np.array([[1, 2, 3], [4, 5, 6]])
+b = np.array([1, 2, 3])
+print(a + b)
+\end{lstlisting}
+\begin{itemize}
+  \item A)
+  \begin{lstlisting}
+    [[1 2 3]
+     [4 5 6]
+     [1 2 3]]
+  \end{lstlisting}
+  \item B)
+  \begin{lstlisting}
+    [[2 4 6]
+     [4 5 6]]
+  \end{lstlisting}
+  \item C)
+  \begin{lstlisting}
+  [[2 4 6]
+   [5 7 9]]
+  \end{lstlisting}
+\item D) Už nedokážu vymyslet další nesmyslné možnosti, ale správná odpověď je A
+\end{itemize}
+\end{frame}
+
+\end{document}
