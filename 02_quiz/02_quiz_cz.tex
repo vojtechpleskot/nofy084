@@ -115,8 +115,8 @@ print(my_list[2])
 \item A) "The value of x is " + str(x)
 \item B) "The value of x is 10"
 \item C) "The value of x is " + x
-\item D) f"The value of x is {x}"
-\item E) "The value of x is {}".format(x)
+\item D) f"The value of x is \{x\}"
+\item E) "The value of x is \{\}".format(x)
 \end{itemize}
 \end{frame}
 
@@ -130,7 +130,7 @@ print(my_dict['b'])
 \begin{itemize}
 \item A) 'b'
 \item B) 2
-\item C) {'b': 2}
+\item C) \{'b': 2\}
 \item D) KeyError: 'b'
 \end{itemize}
 \end{frame}
@@ -162,9 +162,9 @@ my_set.add(3)
 print(my_set)
 \end{lstlisting}
 \begin{itemize}
-\item A) {1, 2, 3, 3}
+\item A) \{1, 2, 3, 3\}
 \item B) AttributeError: 'set' object has no attribute 'add'
-\item C) {1, 2, 3}
+\item C) \{1, 2, 3\}
 \item D) 'Jak vám dupou králíci?'
 \end{itemize}
 \end{frame}
@@ -188,15 +188,16 @@ print(my_list[1:4])
 % Otázka na slovníkové generátory
 \begin{frame}[fragile]
   Jaký je výstup následujícího kódu?
-\begin{lstlisting}my_dict = {x: x**2 for x in range(5)}
+\begin{lstlisting}
+my_dict = {x: x**2 for x in range(5)}
 print(my_dict)
 \end{lstlisting}
 \begin{itemize}
-\item A) {1: 1, 2: 4, 3: 9, 4: 16}
-\item B) {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-\item C) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
-\item D) {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-\item E) {(0, 1, 2, 3, 4): (0, 1, 4, 9, 16)}
+\item A) \{1: 1, 2: 4, 3: 9, 4: 16\}
+\item B) \{1: 1, 2: 4, 3: 9, 4: 16, 5: 25\}
+\item C) \{0: 0, 1: 1, 2: 4, 3: 9, 4: 16\}
+\item D) \{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25\}
+\item E) \{(0, 1, 2, 3, 4): (0, 1, 4, 9, 16)\}
 \end{itemize}
 \end{frame}
 
@@ -221,7 +222,7 @@ print(a, b)
 \begin{frame}[fragile]
   Jak získat obsah souboru 'file.txt' načtený do proměnné \texttt{data}?
 \begin{itemize}
-\item A) print("Sezame, otevři se!")
+\item A) Sezame, otevři se!
 \item B) data = open('file.txt', 'r')
 \item C) with open('file.txt', 'r') as f: data = f.read()
 \item D) f = 'file.txt'; data = f.read()
@@ -271,8 +272,8 @@ print(a + b)
 \item A)
 \begin{lstlisting}
 [[1 2 3]
- [2 4 6]
- [3 6 9]]
+ [1 2 3]
+ [1 2 3]]
 \end{lstlisting}
 \item B) 14
 \item C) [1 4 9]
